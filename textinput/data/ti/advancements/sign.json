@@ -1,0 +1,18 @@
+{
+    "criteria": {
+      "written_book": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "minecraft:written_book"
+              ],
+              "nbt": "{input:1b}"
+            }
+          ]
+        }
+      }
+    }
+  }
+  

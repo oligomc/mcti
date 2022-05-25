@@ -1,0 +1,27 @@
+{
+  "condition": "minecraft:alternative",
+  "terms": [
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "target": "this",
+        "score": "textinput"
+      },
+      "range": {
+        "min": 1
+      }
+    },
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "target": "this",
+        "score": "textinput"
+      },
+      "range": {
+        "max": -1
+      }
+    }
+  ]
+}

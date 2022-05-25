@@ -1,0 +1,14 @@
+{
+  "criteria": {
+    "block_gui": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "tag": "ti:container"
+          }
+        }
+      }
+    }
+  }
+}
