@@ -1,3 +1,2 @@
 # the target that entered the text can be referenced using the @p selector (NOT @s) and their text can be accessed from either the out.plain tag for the player's input as plain strings or the out.json tag for the player's input as a list of json text components in the ti:io storage namespace. Below is a simple command which prints the target's plain text input back to them
-# tellraw @p [{"nbt":"out.plain", "storage":"ti:io"}]
-function rename:rename
+tellraw @p [{"nbt":"out.plain", "storage":"ti:io"}]
