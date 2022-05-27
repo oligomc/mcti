@@ -5,36 +5,6 @@
       "conditions": {
         "player": [
           {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:alternative",
-              "terms": [
-                {
-                  "condition": "minecraft:value_check",
-                  "value": {
-                    "type": "minecraft:score",
-                    "target": "this",
-                    "score": "textinput"
-                  },
-                  "range": {
-                    "max": -1
-                  }
-                },
-                {
-                  "condition": "minecraft:value_check",
-                  "value": {
-                    "type": "minecraft:score",
-                    "target": "this",
-                    "score": "textinput"
-                  },
-                  "range": {
-                    "min": 1
-                  }
-                }
-              ]
-            }
-          },
-          {
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {

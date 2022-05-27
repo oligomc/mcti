@@ -16,24 +16,28 @@ The data pack can be disabled in-game before uninstalling using the `/function t
 ### Getting Text Input from Players
 Any `target` can begin entering text by enabling them on the `textinput` scoreboard using the command `/scoreboard players enable [target] textinput` followed by triggering the scoreboard using the command `/trigger textinput`. Alternatively, this can be done from an external executor using the command `/execute as [target] run trigger textinput`. 
 
-The mainhand slot of `target` will be changed to a `writable_book` with customizable text and will display a customizable message on the actionbar. The initial book text can be changed to any `text` by editing the `in.book` tag in the `ti:io` namespace using the command `/data modify storage ti:io in.book set value [text]`, where `[text]` is an array of strings (`[""]` by default). The message on the actionbar can be changed to any `message` by editing the `in.message` tag in the `ti:io` namespace using the command `/data modify storage ti:io in.message set value [message]`, where `[message]` is a string (`"Open the book and enter your response!"` by default). 
+The mainhand slot of `target` will be changed to a `writable_book` with customizable text and will display a customizable message on the actionbar. Once `target` has changed the book text and pressed the `"Done"` button in the GUI, the book will be replaced with the item that previously occupied the slot, a `marker` entity will mark the position of `target`, and the command in `in.command` will be run the next game tick (see next section).
 
-Once `target` has changed the book text and pressed the `"Done"` button in the GUI, the book will be replaced with the item that previously occupied the slot and the function `ti:out` will be run at their location. When editing the `ti:out` file, the `target` that entered the text can be referenced using the `@p` selector (NOT `@s`) and their text can be accessed from either the `out.plain` tag for the player's input as plain strings or the `out.json` tag for the player's input as a list of json text components in the `ti:io` storage namespace. By default, `ti:out` runs a single command which prints the `target`'s plain text input back to them: `/tellraw @p {"nbt":"out.plain","storage":"ti:io"}`.
-
-**NOTE**: The `writable_book` is replaced _before_ `ti:out` is called, meaning the `target`'s previously held item data is available in the player's `SelectedItem` data tag when `ti:out` is called.
+### `ti:io` storage
+Text input can be accessed and customized through the `ti:io` storage namespace. When the command `data get storage ti:io` is entered a data compound is returned with the following data:
+- `in.book`: The text that initially fills the pages of the book the target is given. Takes an array of strings. Default is `[""]`.
+- `in.message`: The message that displays on the action bar when the target is given the book. Takes a string. Default is `"Open the book and enter your response!"`.
+- `in.command`: The command to run once `target` has successfully entered text, without the forwardslash (`/`). Command execution occurs on the tick after book signing from a command block located at `1 -64 0`. The execution location can be set to the `target`'s position using `execute` at the `marker` entity `ti.marker` (UUID: `8f966154-c782-4f40-a44f-ad7632b9c700`, Name: `ti.marker`, Tag: `ti.marker`). Marker entity details can be displayed and grabbed in-game using the function `ti:marker`. By default, the first plain text input is printed to `target`: `'execute at 8f966154-c782-4f40-a44f-ad7632b9c700 run tellraw @p {"nbt":"out.plain[0]","storage":"ti:io"}'`.
+- `out.plain`: The text entered by `target` as an array of plain text strings. Each element corresponds to a single page from the response book.
+- `out.json`: The text entered by `target` as an array of json text components. Each element corresponds to a single page from the response book.
 
 ### Assets and Reserved Namespaces
 After installing and loading the data pack, the following assets are created:
 1. The `textinput` scoreboard objective is created
 2. Data is initialized to the `ti:io` and `ti:data` storage namespaces
 3. Chunk `[0, 0]` is forceloaded
-4. A marker `armor_stand` with the name `ti` and the tag `ti.item` is summoned at `[0, -70, 0]`
-5. An empty `black_shulker_box` is placed at `[0, -64, 0]`
+4. An `armor_stand` (UUID: `4e12eb6d-70c7-4647-a0da-cefbaf3e2d16`, Name: `ti`) and a `marker` (UUID: `8f966154-c782-4f40-a44f-ad7632b9c700`, Name: `ti.marker`, Tag: `ti.marker`) are summoned at `[0, -70, 0]`
+5. An empty `black_shulker_box` is placed at `[0, -64, 0]` and a `command_block` is placed at `[1, -64, 0]`
 
 It is recommended that creators refrain from using these namespaces and avoid interacting with loaded assets in unintended ways to prevent unexpected behavior.
 
 ## Credits
-Inspiration for this data pack came from server plugins like [WesJD's AnvilGUI](https://github.com/WesJD/AnvilGUI).
+Inspiration for this data pack came from server plugins like [WesJD's AnvilGUI](https://github.com/WesJD/AnvilGUI). Data pack assets written by IGN Oligo.
 
 ## License
 GNU GPL v3.0 (see LICENSE.txt)

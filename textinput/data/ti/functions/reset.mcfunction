@@ -11,7 +11,9 @@ data remove storage ti:data item
 data remove storage ti:data comp
 data remove storage ti:data bin
 clear @a writable_book{input:1b}
-tag @a[tag=ti.book] remove ti.book
-setblock 0 -64 0 air
-kill @e[x=-1, dx=1, y=-71, dy=1, z=-1, dz=1, type=minecraft:armor_stand, tag=ti.item]
+tag @a[tag=textinput] remove textinput
+fill 0 -64 0 1 -64 0 air
+setblock 0 -64 1 air
+kill 4e12eb6d-70c7-4647-a0da-cefbaf3e2d16
+kill 8f966154-c782-4f40-a44f-ad7632b9c700
 forceload remove 0 0

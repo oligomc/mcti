@@ -1,0 +1,1 @@
+data modify block 0 -61 0 Command set value "say hello"

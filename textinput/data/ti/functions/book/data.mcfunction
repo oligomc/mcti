@@ -1,13 +1,17 @@
-## store book pages as plain string and json component
+## store book pages as plain strings and json components
 data modify storage ti:io out.plain set from storage ti:data item.tag.pages
 execute store result score #i textinput run data get storage ti:io out.plain
 execute if score #i textinput matches 1.. run function ti:book/loop
 data modify storage ti:io out.json set from entity @p SelectedItem.tag.display.Lore
 
-## take book from player, remove tag, and remove actionbar
+## reset player assets
 function ti:book/take
-tag @p remove ti.book
+scoreboard players reset @p textinput
+tag @p remove textinput
 title @p actionbar {"text":""}
 
-## run ti:out
-function ti:out
+## mark player position and run command in ti:io in.command
+tp 8f966154-c782-4f40-a44f-ad7632b9c700 ~ ~ ~
+data modify block 1 -64 0 auto set value 0b
+data modify block 1 -64 0 Command set from storage ti:io in.command
+data modify block 1 -64 0 auto set value 1b
