@@ -12,8 +12,7 @@ data remove storage ti:data comp
 data remove storage ti:data bin
 clear @a writable_book{input:1b}
 tag @a[tag=textinput] remove textinput
-fill 0 -64 0 1 -64 0 air
-setblock 0 -64 1 air
+fill 29999983 -64 0 29999981 -62 4 bedrock replace
 kill 4e12eb6d-70c7-4647-a0da-cefbaf3e2d16
 kill 8f966154-c782-4f40-a44f-ad7632b9c700
-forceload remove 0 0
+forceload remove 29999983 0

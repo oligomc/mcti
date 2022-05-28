@@ -6,3 +6,4 @@ loot replace entity @s weapon.mainhand loot ti:trigger
 data modify entity @s HandItems[0].tag.slot set from entity @p SelectedItemSlot
 item replace entity @p weapon.mainhand from entity @s weapon.mainhand
 tag @p add textinput
+execute if data storage ti:io {in:{display:1b}} run function ti:book/display
