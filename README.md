@@ -41,4 +41,4 @@ It is recommended that creators refrain from using these namespaces and avoid in
 Inspiration for this data pack came from server plugins like [WesJD's AnvilGUI](https://github.com/WesJD/AnvilGUI). Data pack assets written by IGN Oligo.
 
 ## License
-See LICENCE.txt
+See LICENSE.txt
