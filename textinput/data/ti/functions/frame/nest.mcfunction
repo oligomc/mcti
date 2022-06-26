@@ -5,7 +5,7 @@ clear @p[tag=ti.frame] minecraft:writable_book{textinput:true}
 data modify block 29999970 -62 2 Items[] set from entity @s Item
 data modify block 29999970 -62 2 Items[0].Slot set from block 29999970 -62 2 Items[0].tag.slot
 data modify block 29999970 -62 2 Items append from entity @p[tag=ti.frame] Inventory[]
-loot replace entity @p[tag=ti.frame] hotbar.0 mine 29999970 -62 2 air{drop:true}
+loot replace entity @p[tag=ti.frame] hotbar.0 mine 29999970 -62 2 air{drop_contents:true}
 
 ## remove writable_book from item_frame and remove ti.found tag
 data modify entity @s Item set value {id:"minecraft:air", Count:1b}

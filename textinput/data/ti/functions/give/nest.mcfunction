@@ -5,7 +5,7 @@ execute as @p[tag=ti.give] run function ti:give/nest1
 data modify block 29999970 -62 2 Items[] set from entity @s HandItems[0]
 data modify block 29999970 -62 2 Items[0].Slot set from block 29999970 -62 2 Items[0].tag.slot
 data modify block 29999970 -62 2 Items append from entity @p[tag=ti.give] Inventory[]
-loot replace entity @p[tag=ti.give] hotbar.0 mine 29999970 -62 2 air{drop:true}
+loot replace entity @p[tag=ti.give] hotbar.0 mine 29999970 -62 2 air{drop_contents:true}
 
 ## replace item in armor stand hand and remove ti.found tag
 data modify entity @s HandItems[0] set from storage ti:data temp.swap

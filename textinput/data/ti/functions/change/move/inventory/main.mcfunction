@@ -10,4 +10,4 @@ data modify storage ti:data temp.bin.two append from storage ti:data temp.swap
 
 ## merge bin.two into target inventory
 data modify block 29999970 -62 2 Items set from storage ti:data temp.bin.two
-loot replace entity @s inventory.18 mine 29999970 -62 2 air{drop:1b}
+loot replace entity @s inventory.18 mine 29999970 -62 2 air{drop_contents:true}
