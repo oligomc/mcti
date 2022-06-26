@@ -1,0 +1,27 @@
+{
+  "parent": "ti:enable",
+  "criteria": {
+    "change": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "ti:textinput"
+          }
+        ],
+        "items": [
+          {
+            "items": [
+              "minecraft:writable_book"
+            ],
+            "nbt": "{textinput:true}"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "ti:change/main"
+  }
+}

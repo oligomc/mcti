@@ -1,0 +1,44 @@
+{
+  "parent": "ti:enable",
+  "criteria": {
+    "block": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "ti:textinput"
+          }
+        ],
+        "location": {
+          "block": {
+            "tag": "ti:gui"
+          }
+        }
+      }
+    },
+    "entity": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "ti:textinput"
+          }
+        ],
+        "entity": {
+          "type": "#ti:gui"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "block",
+      "entity"
+    ]
+  ],
+  "rewards": {
+    "function": "ti:open/main"
+  }
+}

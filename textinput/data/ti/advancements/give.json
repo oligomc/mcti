@@ -1,0 +1,28 @@
+{
+    "parent": "ti:enable",
+    "criteria": {
+      "give": {
+        "trigger": "minecraft:player_interacted_with_entity",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:reference",
+              "name": "ti:textinput"
+            }
+          ],
+          "item": {
+            "items": [
+              "minecraft:writable_book"
+            ],
+            "nbt": "{textinput:true}"
+          },
+          "entity": {
+            "type": "minecraft:armor_stand"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "ti:give/main"
+    }
+  }

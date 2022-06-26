@@ -1,0 +1,44 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:writable_book",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{textinput:1b, HideFlags:1, display:{Name:'{\"text\":\"Text Input\", \"italic\":false}'}, Enchantments:[{id:\"minecraft:aqua_affinity\", lvl:1s}]}"
+            },
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "this",
+              "ops": [
+                {
+                  "source": "SelectedItemSlot",
+                  "target": "slot",
+                  "op": "replace"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:copy_nbt",
+              "source": {
+                "type": "minecraft:storage",
+                "source": "ti:io"
+              },
+              "ops": [
+                {
+                  "source": "in.book",
+                  "target": "pages",
+                  "op": "replace"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

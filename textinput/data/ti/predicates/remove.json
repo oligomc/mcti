@@ -1,0 +1,19 @@
+[
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "player",
+          "advancements": {
+            "ti:open": false
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "ti:textinput"
+    }
+  ]
+  

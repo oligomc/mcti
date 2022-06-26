@@ -1,0 +1,2 @@
+execute store result storage ti:data temp.swap.Slot byte 1 run scoreboard players get #comp ti.register
+execute if score #comp ti.register matches 0..26 run data modify storage ti:data temp.bin.one append from storage ti:data temp.swap

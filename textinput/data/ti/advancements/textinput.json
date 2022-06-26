@@ -1,0 +1,17 @@
+{
+    "display": {
+        "title": "Text Input",
+        "description": "Collect text input from players",
+        "icon": {
+            "item": "minecraft:writable_book"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "global:oligo",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

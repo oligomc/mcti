@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "enable": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "ti:enable/main"
+  }
+}

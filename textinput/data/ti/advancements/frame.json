@@ -1,0 +1,28 @@
+{
+    "parent": "ti:enable",
+    "criteria": {
+      "frame": {
+        "trigger": "minecraft:player_interacted_with_entity",
+        "conditions": {
+          "player": [
+            {
+              "condition": "minecraft:reference",
+              "name": "ti:textinput"
+            }
+          ],
+          "item": {
+            "items": [
+              "minecraft:writable_book"
+            ],
+            "nbt": "{textinput:true}"
+          },
+          "entity": {
+            "type": "#ti:frame"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "ti:frame/main"
+    }
+  }

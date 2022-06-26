@@ -1,0 +1,50 @@
+[
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:player",
+            "type_specific": {
+              "type": "player",
+              "advancements": {
+                "ti:enable": true
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "minecraft:marker",
+            "location": {
+              "position": {
+                "x": 29999968.5,
+                "y": -64,
+                "z": 0.5
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "ti.register": {
+          "min": {
+            "type": "minecraft:score",
+            "target": {
+              "type": "minecraft:fixed",
+              "name": "#min"
+            },
+            "score": "ti.register"
+          }
+        }
+      }
+    }
+  ]

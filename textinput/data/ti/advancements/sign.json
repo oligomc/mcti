@@ -1,0 +1,27 @@
+{
+  "parent": "ti:enable",
+  "criteria": {
+    "sign": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "ti:textinput"
+          }
+        ],
+        "items": [
+          {
+            "items": [
+              "minecraft:written_book"
+            ],
+            "nbt": "{textinput:true}"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "ti:sign/main"
+  }
+}

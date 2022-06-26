@@ -1,0 +1,32 @@
+{
+  "parent": "ti:enable",
+  "criteria": {
+    "place": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "ti:textinput"
+          }
+        ],
+        "item": {
+          "items": [
+            "minecraft:writable_book"
+          ],
+          "nbt": "{textinput:true}"
+        },
+        "location": {
+          "block": {
+            "blocks": [
+              "minecraft:lectern"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "ti:place/main"
+  }
+}
