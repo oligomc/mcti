@@ -1,2 +1,0 @@
-execute if score #comp textinput matches -106 run function ti:move/bin/offhand
-execute unless score #comp textinput matches -106 run data modify storage ti:data bin.one append from storage ti:data inv[0]
